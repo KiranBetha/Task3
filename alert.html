@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <form>
+     Enter Username: <input type="text" id="username">
+     Enter Password: <input type="password" id="password">
+      <button onclick="login()">Submit</button>
+    </form>
+
+    <script>
+    
+      function login(){
+        event.preventDefault();
+
+        var username=document.getElementById('username').value;
+        var password=document.getElementById('password').value;
+
+        if(username === "abc" && password === "abc"){
+          alert("login success");
+        }
+        else
+        {
+          alert("login failure");
+        }
+      }
+    
+    </script>
+  </body>
+</html>

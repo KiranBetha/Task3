@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+    <center>
+<h1>Digital Lync Technologies</h1>
+<form>
+        <h3 style="background-color:white";text-align:center">Registration Form</h3>
+        <br><tr>
+        <td>Username:</td>
+        <td><input id="username" type="text" value=""></td></tr></br>
+        <br><tr>
+        <td>Password:</td>
+        <td><input id="pwd" type="password" value=""></td>
+        </tr></br>
+        <br><tr>
+        <td>Confirm Password:</td>
+        <input id="cpwd" type="confirm_password" value=""></td>
+        </tr>
+    </br>
+        <br>
+        <td>Gender:</td>
+        <td><input id="gender" type="radio" name="Gender">Male  
+        <input id="gender" type="radio" name="Gender">Female</td>
+        </br>
+        <br>  <tr>
+        <td>Email:</td>
+        <td><input id="Email" type="Email" value=""></td>
+        </tr></br>
+        <br><tr>
+        <td>Mobile No:</td>
+        <td><select>
+        <option>+91</option>
+        <option>+71</option>
+        <option>+44</option>
+        <option>+22</option>
+        <option>+96</option>
+        </select>
+        <input id="Mobileno" type="phone" value=""></td>
+       </tr></br>
+       <br><tr>
+       <td>Course:</td>
+       <td><select input id="course" type="text" value="">
+       <option>Java</option>
+       <option>Python</option>
+       <option>Angular</option>
+       <option>Bootstrap</option>
+       <option>Nodejs</option>
+       </select>
+       </tr></br>
+       <br><td><input id="Register" onclick="session()" type="Submit" value="Register"</td>
+       </tr></br>
+      </td>
+      </form>
+      </table>
+    </center>
+<script>
+var username=document.getElementById('username');
+var userpwd=document.getElementById('pwd');
+var usercpwd=document.getElementById('cpwd');
+var usergender=document.getElementById('gender'); 
+var userEmail=document.getElementById('Email');
+var userMobileno=document.getElementById('Mobileno');
+var usercourse=document.getElementById('course');
+function session(){
+localStorage.setItem('username', username.value);
+localStorage.setItem('userpwd', userpwd.value);
+localStorage.setItem('usercpwd', usercpwd.value);
+localStorage.setItem('usergender', usergender.value);
+localStorage.setItem('userEmail', userEmail.value);
+localStorage.setItem('userMobileno', userMobileno.value);
+localStorage.setItem('usercourse', usercourse.value);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<html>
+  <body>
+    <form>
+     Enter Username:<input type="text" id="username"> <br>
+     Enter Password:<input type="password" id="password"> <br>
+     Enter MobileNumber:<input type="text" id="mobile_number"> <br>
+      <button onclick="register()">Register</button>
+    </form>
+ 
+    <script>
+    
+      function register(){
+       event.preventDefault();
+       var username=document.getElementById("username").value;
+       var password=document.getElementById("password").value;
+       var mobile=document.getElementById("mobile_number").value;
+ 
+          var userdata={
+            username:username,
+            password:password,
+            mobile:mobile
+          }
+           if(localStorage.getItem('userDetails') == null){
+             localStorage.setItem('userDetails',JSON.stringify([]));
+             var userDTA=JSON.parse(localStorage.getItem('userDetails'));
+              console.log('userDTA', userDTA);
+              userDTA.push(JSON.stringify(userdata));
+              var convertedJSArrayToString=  JSON.stringify(userDTA);
+              console.log('convertedJSArrayToString',convertedJSArrayToString);
+              localStorage.setItem('userDetails',convertedJSArrayToString);
+           }
+           else
+           {
+            var userDetailsArray=JSON.parse(localStorage.getItem('userDetails'));
+                 userDetailsArray.push(JSON.stringify(userdata));
+                 console.log(userDetailsArray);
+                 localStorage.setItem('userDetails',JSON.stringify(userDetailsArray));
+           }
+          
+          //localStorage.setItem('userDetails', JSON.stringify(userdata));
+      }
+    
+    </script>
+  </body>
+</html>
